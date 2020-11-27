@@ -36,7 +36,7 @@ def get_address(lan, lon):
 		location = geolocator.reverse(scoord)
 		return location.address
 	except:		
-		debug.print_exception()
+		
 		return None	
 
 
