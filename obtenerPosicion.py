@@ -17,6 +17,10 @@ def insert(connection):
     try:
         point, posicion=position()
         direccion=get_address ( posicion["latitude"], posicion["longitude"] )
+        print(direccion)
+        if direccion ==None:
+            direccion="Se desconoce la dirección de las coordenadas"
+        print(point)
         cursor.execute(
             "INSERT INTO iss (position,address) VALUES (?,?)", [point, direccion],
         )
