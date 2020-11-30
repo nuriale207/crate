@@ -48,7 +48,7 @@ def createDatabase(connection):
 		        """CREATE TABLE iss(
 		        timestamp TIMESTAMP GENERATED ALWAYS AS CURRENT_TIMESTAMP,
 		        position GEO_POINT,
-			address varchar(1000))"""
+			address string)"""
 		)
 		print("DATABASE CREATED OK")
 	except Exception as err:
