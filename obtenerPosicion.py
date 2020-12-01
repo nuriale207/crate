@@ -54,7 +54,7 @@ def createDatabase(connection):
 	except Exception as err:
 		print("ERROR CREATING DATABASE: %s" % err)
 		return
-
+print("Si me actualizo")
 time.sleep(30)
 try:
 	connection = client.connect("crate:4200")
