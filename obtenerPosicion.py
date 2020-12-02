@@ -57,7 +57,7 @@ def createDatabase(connection):
 print("Si me actualizo")
 time.sleep(30)
 try:
-	connection = client.connect("10.108.41.115:4300")
+	connection = client.connect("crate-internal-service:4300")
 	print("CONNECT OK")
 
 except Exception as err:
