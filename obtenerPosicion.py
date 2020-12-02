@@ -57,7 +57,7 @@ def createDatabase(connection):
 print("Si me actualizo")
 time.sleep(30)
 try:
-	connection = client.connect("10.99.157.28:4200")
+	connection = client.connect("10.110.65.199:4300")
 	print("CONNECT OK")
 
 except Exception as err:
