@@ -55,6 +55,20 @@ def createDatabase(connection):
 		print("ERROR CREATING DATABASE: %s" % err)
 		return
 print("Si me actualizo")
+
+
+def guardarDocumento(text,path):
+    """ Guarda el texto text en el documento indicado en el path
+                   Parámetros:
+                       text -- texto a almacenar
+                       path -- path en el que almacenar el texto
+        """
+    f4 = open(path, 'a')
+    f4.write(text)
+    f4.write("\n")
+    f4.close()
+
+
 time.sleep(30)
 try:
 	connection = client.connect("crate-internal-service:4200")
@@ -70,4 +84,15 @@ for i in range(0,10):
     insert(connection)
     print("Sleeping for 5 seconds...")
     time.sleep(5)
+
+
+cursor=connection.cursor()
+cursor.execute("SELECT address FROM iss")
+
+result=cursor.fetchall()
+
+texto=""
+for element in result:
+	texto+=str(element[0])+"\n"
+guardarDocumento(texto,"/data/dataBD.txt")
 
