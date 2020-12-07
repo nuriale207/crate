@@ -6,5 +6,6 @@ RUN pip3 install requests
 RUN pip3 install crate
 RUN pip3 install geopy
 COPY obtenerPosicion.py /code
+RUN mkdir /data
 CMD ["python3","obtenerPosicion.py"]
 
